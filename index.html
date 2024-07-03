@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reclaim</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>RECLAIM</h1>
+    </header>
+
+    <section id="upload-section">
+        <h2>Upload Lost Item</h2>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <label for="item_name">Item Name:</label>
+            <input type="text" id="item_name" name="item_name" required>
+            <label for="item_desc">Item Description:</label>
+            <textarea id="item_desc" name="item_desc" required></textarea>
+            <label for="item_image">Upload Image:</label>
+            <input type="file" id="item_image" name="item_image" accept="image/*" required>
+            <button type="submit">Upload</button>
+        </form>
+    </section>
+
+    <section id="items-section">
+        <h2>Lost Items</h2>
+        <div id="items-list">
+            <?php include 'list_items.php'; ?>
+        </div>
+    </section>
+
+    <section id="claim-section">
+        <h2>Claim Item</h2>
+        <form action="claim.php" method="post">
+            <label for="item_id">Item Name</label>
+            <input type="text" id="item_id" name="item_id" required>
+            <label for="claimant_name">Your Name:</label>
+            <input type="text" id="claimant_name" name="claimant_name" required>
+            <label for="claimant_id">ID Number:</label>
+            <input type="text" id="claimant_id" name="claimant_id" required>
+            <label for="contact_info">Contact Info:</label>
+            <input type="text" id="contact_info" name="contact_info" required>
+            <button type="submit">Claim</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Reclaim by David Musau</p>
+    </footer>
+</body>
+</html>
